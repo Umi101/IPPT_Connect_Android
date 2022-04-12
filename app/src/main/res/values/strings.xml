@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IPPT_Connect</string>
+
+    <!-- Bluetooth Management -->
+
+    <string name="bluetooth_unsupported">This device doesn\'t support Bluetooth Low Energy</string>
+    <string name="bluetooth_notauthorized">This app is not authorized to use the Bluetooth Low Energy</string>
+    <string name="bluetooth_poweredoff">Bluetooth is currently powered off</string>
+
+    <string name="bluetooth_locationpermission_disabled_text">Location Services should be enabled to scan bluetooth peripherals.\nPlease, go to settings and enable it to start scanning peripherals</string>
+    <string name="bluetooth_locationpermission_title">This app needs location access</string>
+    <string name="bluetooth_locationpermission_text">Please grant location access so this app can scan for Bluetooth peripherals</string>
+    <string name="bluetooth_locationpermission_notavailable_title">Bluetooth Scanning not available</string>
+    <string name="bluetooth_locationpermission_notavailable_text">Since location access has not been granted, the app will not be able to scan for Bluetooth peripherals</string>
+    <string name="bluetooth_scanner_errorregisteringapp">App cannot be registered for bluetooth scanning.\nPlease reset bluetooth and try again.</string>
+    <string name="bluetooth_connecting_error">Error connecting to peripheral</string>
+    <string name="bluetooth_advertising_start_error">Error starting advertising</string>
+
+
+    <!-- Main Tab-Bar -->
+    <string name="main_tabbar_singlemode">Select Device</string>
+    <string name="main_tabbar_centralmode">Central Mode</string>
+    <string name="main_tabbar_peripheralmode">Peripheral Mode</string>
+
+    <!-- New Profile -->
+    <string name="create_new_profile">Create Profile</string>
+    <string name="username">Username</string>
+    <string name="phone">Phone</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="create_profile">Create</string>
+    <string name="select_gender">Select Gender: </string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+
+    <!-- Scanner -->
+    <string name="scanner_title">Peripherals</string>
+    <string name="scanner_backbutton">Disconnect</string>
+    <string name="scanner_splitmasterbutton">Peripheral List</string>
+    <string name="scanner_subtitle">Peripherals found</string>
+    <string name="scanner_uartavailable">Uart capable</string>
+    <string name="scanner_beacon">Beacon</string>
+    <string name="scanner_uribeacon">Uri-Beacon</string>
+    <string name="scanner_notconnectable">Not Connectable</string>
+    <string name="scanner_peripheraldisconnected">Peripheral disconnected</string>
+    <string name="scanner_unnamed">&lt;Unknown&gt;</string>
+    <string name="scanner_connect">Connect</string>
+    <string name="scanner_disconnect">Disconnect</string>
+
+    <string name="scanner_filter_name_title">Name:</string>
+    <string name="scanner_filter_name_hint">Filter by name</string>
+    <string name="scanner_filter_rssi_title">RSSI &gt;=</string>
+    <string name="scanner_filter_rssi_description_format" formatted="false">RSSI &gt;= %d</string>
+    <string name="scanner_filter_unnamed_title">Show unnamed devices</string>
+    <string name="scanner_filter_unnamed_description">with name</string>
+    <string name="scanner_filter_uart_title">Must have UART Service</string>
+    <string name="scanner_filter_uart_description">with UART</string>
+    <string name="scanner_filter_name_matchsection">Match</string>
+    <string name="scanner_filter_name_casesection">Case sensitivity</string>
+    <string name="scanner_filter_currentfilter_format" formatted="false">Filter: %s</string>
+    <string name="scanner_filter_nofilter">No filter selected</string>
+    <string name="scanner_filter_rssivalue_format" formatted="false">%d dBm</string>
+
+    <string name="scanner_filter_name_settings_contains">Name contains</string>
+    <string name="scanner_filter_name_settings_exact">Name equals</string>
+    <string name="scanner_filter_name_settings_sensitive">Matching case</string>
+    <string name="scanner_filter_name_settings_insensitive">Ignoring case</string>
+
+    <string name="scanner_filteredoutinfo_single_format" formatted="false">%d peripheral filtered out</string>
+    <string name="scanner_filteredoutinfo_multiple_format" formatted="false">%d peripherals filtered out</string>
+
+    <!-- Scan Result -->
+    <string name="scanresult_connect">Connect</string>
+    <string name="scanresult_disconnect">Disconnect</string>
+
+    <string name="scanresult_advertisement_viewrawdata">View Raw Data</string>
+    <string name="scanresult_advertisement_rawdata_title">Advertising Raw Data</string>
+
+    <string name="scanresult_advertisement_localname">Local name</string>
+    <string name="scanresult_advertisement_address">Address</string>
+    <string name="scanresult_advertisement_manufacturer">Manufacturer</string>
+    <string name="scanresult_advertisement_services">Services</string>
+    <string name="scanresult_advertisement_servicesuuids">Services UUIDs</string>
+    <string name="scanresult_advertisement_overflowservices">Overflow services</string>
+    <string name="scanresult_advertisement_servicesdata">Services data</string>
+    <string name="scanresult_advertisement_servicesdata_uuid">UUID</string>
+    <string name="scanresult_advertisement_servicesdata_data">Data</string>
+    <string name="scanresult_advertisement_servicessolicited">Services solicited</string>
+    <string name="scanresult_advertisement_connectable">Connectable</string>
+    <string name="scanresult_advertisement_connectable_true">true</string>
+    <string name="scanresult_advertisement_connectable_false">false</string>
+    <string name="scanresult_advertisement_connectable_unknown">unknown</string>
+    <string name="scanresult_advertisement_datapacket">Advertising packet data</string>
+    <string name="scanresult_advertisement_txpower">TX Power Level</string>
+
+    <string name="scanresult_advertisement_uribeacon_uri">Uri</string>
+    <string name="scanresult_advertisement_beacon_uuid">UUID</string>
+    <string name="scanresult_advertisement_beacon_major">Major</string>
+    <string name="scanresult_advertisement_beacon_minor">Minor</string>
+
+    <!-- Multiconnect Management -->
+    <string name="multiconnect_title">Multiple UART mode</string>
+    <string name="multiconnect_connecteddevices_single_format" formatted="false">Connected to %d device</string>
+    <string name="multiconnect_connecteddevices_multiple_format" formatted="false">Connected to %d devices</string>
+    <string name="multiconnect_start_action">Start</string>
+
+    <!-- Peripheral Mode -->
+    <string name="peripheral_advertisinginfo">Advertising Info</string>
+    <string name="peripheral_localname">Local Name</string>
+    <string name="peripheral_services">Services</string>
+    <string name="peripheral_characteristics">Characteristics</string>
+
+    <string name="peripheral_unknown_title">Undefined Peripheral</string>
+    <string name="peripheral_dis_title">Device Information Service</string>
+    <string name="peripheral_uart_title">UART</string>
+
+    <string name="peripheral_notsupported">Peripheral mode is not supported on your device</string>
+    <string name="peripheral_advertising_starterror_undefined">Peripheral mode can\'t not be started</string>
+    <string name="peripheral_advertising_starterror_toolarge">Peripheral mode can\'t not be started: Advertising data too large</string>
+
+
+    <!-- Peripheral Dis -->
+    <string name="peripheral_dis_manufacturer">Manufacturer</string>
+    <string name="peripheral_dis_modelnumber">Model Number</string>
+    <string name="peripheral_dis_serialnumber">Serial Number</string>
+    <string name="peripheral_dis_hardwarenumber">Hardware Number</string>
+    <string name="peripheral_dis_firmwarerevision">Firmware Revision</string>
+    <string name="peripheral_dis_softwarerevision">Software Revision</string>
+
+
+    <!-- Peripheral Details -->
+    <string name="peripheraldetails_select">Connect to a peripheral from the list on the left</string>
+    <string name="peripheraldetails_connecting">Connecting&#8230;</string>
+    <string name="peripheraldetails_discoveringservices">Discovering services&#8230;</string>
+    <string name="peripheraldetails_errordiscoveringservices">Error discovering peripheral services</string>
+
+
+    <!-- Peripheral Modules -->
+    <string name="peripheralmodules_title">Modules</string>
+    <string name="peripheralmodules_sectiontitle_device_single">Device</string>
+    <string name="peripheralmodules_sectiontitle_device_multiconnect">Multiple Devices</string>
+    <string name="peripheralmodules_sectiontitle_modules">Modules</string>
+    <string name="peripheralmodules_rssi_format" formatted="false">%d dBm</string>
+    <string name="peripheralmodules_rssi_unavailable">not available</string>
+    <string name="peripheralmodules_battery_format" formatted="false">%d%%</string>
+
+
+    <!-- Info -->
+    <string name="info_tab_title">Info</string>
+    <string name="info_navigation_title_format" formatted="false">Info - %s</string>
+
+    <string name="info_type_service">Service</string>
+    <string name="info_type_characteristic">Characteristic</string>
+    <string name="info_type_descriptor">Descriptor</string>
+    <string name="info_data_hex">Data (Hex):</string>
+    <string name="info_data_dec">Data (Dec):</string>
+
+    <string name="info_uuid">UUID:</string>
+
+
+    <string name="info_help_title">Info</string>
+    <string name="info_help_text">• Each section of the table represents one of the peripheral\'s services followed by its relevant characteristics.\n\n• If a service or characteristic uses a predefined UUID, a standardized name is displayed.  Otherwise the UUID value is shown.\n\n• If a characteristic contains a readable value, that value is displayed at the bottom of the characteristic\'s table row</string>
+
+
+
+    <!-- Uart -->
+    <string name="uart_tab_title">UART</string>
+    <string name="uart_navigation_title_format" formatted="false">UART - %s</string>
+
+
+    <string name="uart_send_action">Send</string>
+    <string name="uart_send_toall_action">To All</string>
+    <string name="uart_send_toall_long">All Connected Peripherals</string>
+
+    <string name="uart_sentbytes_format" formatted="false">Sent: %d bytes</string>
+    <string name="uart_receivedbytes_format" formatted="false">Received: %d bytes</string>
+    <string name="uart_timestamp_direction_rx">RX</string>
+    <string name="uart_timestamp_direction_tx">TX</string>
+    <string name="uart_text_dataomitted">(Previous data omitted to improve performance…)</string>
+
+    <string name="uart_export_format_title">Export data</string>
+    <string name="uart_export_format_subtitle">Choose the preferred format:</string>
+    <string name="uart_export_nodata">No data to export</string>
+    <string name="uart_export_save_message">Export Data to File</string>
+    <string name="uart_export_save_prompt">Export</string>
+
+    <string name="uart_settings_displayMode_title">Display Mode</string>
+    <string name="uart_settings_displayMode_timestamp">Timestamp</string>
+    <string name="uart_settings_displayMode_text">Text</string>
+    <string name="uart_settings_dataMode_title">Data Mode</string>
+    <string name="uart_settings_dataMode_hex">Hex</string>
+    <string name="uart_settings_dataMode_ascii">Ascii</string>
+    <string name="uart_settings_echo_title">Show Echo</string>
+    <string name="uart_settings_eol_title">Send EoL</string>
+    <string name="uart_settings_eolCharacters_title">EoL Characters</string>
+    <string name="uart_eolmode_n">\\n</string>
+    <string name="uart_eolmode_r">\\r</string>
+    <string name="uart_eolmode_nr">\\n\\r</string>
+    <string name="uart_eolmode_rn">\\r\\n</string>
+
+
+    <string name="uart_settings_clear_title">Clear</string>
+    <string name="uart_settings_export_title">Export&#8230;</string>
+
+    <string name="uart_mqtt_action">MQTT</string>
+    <string name="uart_mqtt_undefinedserver">Mqtt server not defined</string>
+    <string name="uart_mqtt_editsettings">Edit Mqtt Settings</string>
+
+
+    <string name="uart_mqtt_status_connected">Connected</string>
+    <string name="uart_mqtt_status_connecting">Connecting&#8230;</string>
+    <string name="uart_mqtt_status_disconnecting">Disconnecting&#8230;</string>
+    <string name="uart_mqtt_status_error">Error</string>
+    <string name="uart_mqtt_status_disconnected">Disconnected</string>
+
+    <string name="uart_mqtt_connectionerror_title">MQTT Connection Error</string>
+
+
+    <string name="uart_mqtt_subscription_localonly">Local Only</string>
+    <string name="uart_mqtt_subscription_transmit">Transmit</string>
+
+    <string name="uart_mqtt_qos_atleastonce">At Least Once</string>
+    <string name="uart_mqtt_qos_atmostonce">At Most Once</string>
+    <string name="uart_mqtt_qos_exactlyonce">Exactly Once</string>
+
+
+
+    <string name="uart_help_title">UART</string>
+    <string name="uart_help_text">Instructions:\n\n• Tap the input field at the bottom of the screen.\n\n• Enter the text string you want to send.\n\n• Send a message by pressing the keyboard\'s Send button.\n\n• Use the Timestamp/Text and ASCII/Hex control above the main console view to control the display format of messages.\n\n• Use the Export button to copy or send the contents of the console.\n\n• Use the Clear button to clear the console\'s contents.</string>
+    <string name="uart_help_text_android">Instructions:\n\n• Tap the input field at the bottom of the screen.\n\n• Enter the text string you want to send.\n\n• Send a message by pressing the keyboard\'s Send button.\n\n• Use the Timestamp/Text and ASCII/Hex control above the main console view to control the display format of messages.</string>
+
+    <string name="uart_error_peripheralinit">Uart protocol can not be initialized</string>
+    <string name="uart_error_multipleperiperipheralinit_format" formatted="false">Uart protocol can not be initialized for peripheral: %s</string>
+
+
+    <!-- Mqtt -->
+    <string name="mqtt_connection_lost">Mqtt server connection failed</string>
+    <string name="mqtt_connection_failed">Mqtt connection to server lost</string>
+
+    <string name="uart_mqtt_settings_title">MQTT Settings</string>
+    <string name="uart_mqtt_action_title">Mqtt Status:</string>
+    <string name="uart_mqtt_action_connect">Connect</string>
+    <string name="uart_mqtt_action_disconnect">Disconnect</string>
+
+    <string name="uart_mqtt_settings_group_status">Status</string>
+    <string name="uart_mqtt_settings_group_server">Server</string>
+    <string name="uart_mqtt_settings_server_address">Address:</string>
+    <string name="uart_mqtt_settings_server_port">Port:</string>
+    <string name="uart_mqtt_settings_group_publish">Publish</string>
+    <string name="uart_mqtt_settings_publish_rx">Uart RX:</string>
+    <string name="uart_mqtt_settings_publish_tx">Uart TX:</string>
+    <string name="uart_mqtt_settings_group_subscribe">Subscribe</string>
+    <string name="uart_mqtt_settings_subscribe_topic">Topic:</string>
+    <string name="uart_mqtt_settings_subscribe_action">Action:</string>
+    <string name="uart_mqtt_settings_group_advanced">Advanced</string>
+    <string name="uart_mqtt_settings_advanced_username">Username:</string>
+    <string name="uart_mqtt_settings_advanced_password">Pass/Key:</string>
+    <string name="uart_mqtt_settings_cleansession">Clean session:</string>
+    <string name="uart_mqtt_settings_sslconnection">SSL connection:</string>
+    <string name="uart_mqtt_qrconfig_action">Scan Code</string>
+    <string name="uart_mqtt_qrconfig">Configure using AdafruitIO QR-Code</string>
+
+    <string name="uart_mqtt_qrconfig_hint">Pich or strech to zoom the camera image</string>
+    <string name="uart_mqtt_qrconfig_instructions">Point your device camera to the QR-Code and center it on the preview image\n(The code will be automatically read when is visible)</string>
+
+    <!-- exercise -->
+    <string name = "exercise_tab_title">Exercise</string>
+    <string name="automatic_date_time">Automatic date/time</string>
+    <string name="DateLabel">Date</string>
+    <string name="timeLabel">Time</string>
+    <string name="edit_value">Edit value</string>
+    <string name = "exercise_start">START</string>
+    <string name = "exercise_stop">STOP</string>
+    <string name = "exercise_result">Result: </string>
+    <string name = "exercise_result_format">Your result is %d % accurate</string>
+    <string name = "last_records">Last Records: </string>
+
+    <!-- Activity-->
+    <string name = "activity_tab_title">Activity</string>
+
+    <!-- DateGraph -->
+    <string name="graph_all">All</string>
+    <string name="graph_lastyear">Last Year</string>
+    <string name="graph_lastmonth">Last Month</string>
+    <string name="graph_lastweek">Last Week</string>
+
+    <string-array name="zoom_list">
+        <item>@string/graph_all</item>
+        <item>@string/graph_lastyear</item>
+        <item>@string/graph_lastmonth</item>
+        <item>@string/graph_lastweek</item>
+    </string-array>
+
+    <string name="ExerciseLabel">Exercise</string>
+    <string name="no_chart_data_available">No data</string>
+    <string name="countLabel">Count</string>
+
+    <string name="pushUp">Push-up</string>
+    <string name="sitUp">Sit-up</string>
+
+    <string-array name="exercise_spinner" translatable="false">
+        <item>@string/pushUp</item>
+        <item>@string/sitUp</item>
+    </string-array>
+
+
+    <!-- Leaderboard -->
+    <string name = "leaderboard_tab_title">Leaderboard</string>
+
+    <!-- Competition -->
+    <string name = "competition_tab_title">Competition</string>
+
+    <!-- Common -->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_error">Error</string>
+    <string name="dialog_notice">Notice</string>
+    <string name="dialog_dontshowagain">Don\'t show again</string>
+
+</resources>
