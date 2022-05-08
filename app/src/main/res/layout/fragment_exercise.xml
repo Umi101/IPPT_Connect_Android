@@ -158,7 +158,8 @@
             <TextView
                 android:id="@+id/resulttextView"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="200dp"
+                android:textSize="20sp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -167,7 +168,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="3dp"
-            android:text="@string/last_records"/>
+            android:text="@string/last_records"
+            android:visibility="invisible"/>
 
         <com.example.fyp_ippt_connect_android.utils.ExpandedListView
             android:id="@+id/listRecord"

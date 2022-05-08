@@ -47,9 +47,10 @@ public class NewProfileActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 int position = genderGroup.indexOfChild(findViewById(i));
-                if (position == 0){
+                if (position == 1){
                     gender = "Male";
-                }else{
+                }
+                else if (position == 2){
                     gender = "Female";
                 }
             }

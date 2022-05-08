@@ -20,8 +20,11 @@ import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -127,22 +130,48 @@ public class LoginActivity extends AppCompatActivity {
 
     private void startUpTasks(){
 
-        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
-                .getBoolean("isFirstRun", true);
+//        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+//                .getBoolean("isFirstRun", true);
 
-        if (isFirstRun){
-            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-                    .putBoolean("isFirstRun", false).commit();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String userId = user.getUid();
 
-            initializeUseInfo();
-            Log.d(TAG, "initialize done");
+        DatabaseReference userRef = mDatabase.child("Users");
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild(userId)){
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    initializeUseInfo();
+                    Log.d(TAG, "initialize done");
 
-            Intent myIntent = new Intent(LoginActivity.this, NewProfileActivity.class);
-            startActivity(myIntent);
-        }else{
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-        }
+                    Intent myIntent = new Intent(LoginActivity.this, NewProfileActivity.class);
+                    startActivity(myIntent);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+//        if (isFirstRun){
+//            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+//                    .putBoolean("isFirstRun", false).commit();
+//
+//            initializeUseInfo();
+//            Log.d(TAG, "initialize done");
+//
+//            Intent myIntent = new Intent(LoginActivity.this, NewProfileActivity.class);
+//            startActivity(myIntent);
+//        }else{
+//            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//            startActivity(intent);
+//        }
     }
 
     private void initializeUseInfo(){

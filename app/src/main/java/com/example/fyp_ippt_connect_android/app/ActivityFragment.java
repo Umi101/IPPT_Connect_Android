@@ -157,7 +157,7 @@ public class ActivityFragment extends ConnectedPeripheralFragment{
 
         DatabaseReference userRef = mDatabase.child("Users").child(userId);
         DatabaseReference pushUpRecordRef = userRef.child("PushUpRecord");
-        DatabaseReference sitUpRecordRef = userRef.child("SitUpRecord");
+        DatabaseReference sitUpRecordRef = userRef.child("sitUpRecord");
 
 
         mChart.clear();

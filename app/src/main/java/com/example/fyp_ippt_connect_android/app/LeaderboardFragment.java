@@ -29,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class LeaderboardFragment extends ConnectedPeripheralFragment{
@@ -39,6 +40,7 @@ public class LeaderboardFragment extends ConnectedPeripheralFragment{
     private RecyclerView mRecyclerView;
     private DatabaseReference mDatabase;
     private LeaderboardAdapter mAdapter;
+    private View mFragmentView = null;
     List<User> list;
 
 
@@ -46,6 +48,7 @@ public class LeaderboardFragment extends ConnectedPeripheralFragment{
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
             exercise = adapterView.getItemAtPosition(i).toString();
+            createTable();
         }
 
         @Override
@@ -83,7 +86,7 @@ public class LeaderboardFragment extends ConnectedPeripheralFragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        mFragmentView = view;
         Spinner leaderboardFilter = view.findViewById(R.id.filterLeaderboard);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.exercise_spinner, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -98,20 +101,34 @@ public class LeaderboardFragment extends ConnectedPeripheralFragment{
         mRecyclerView.addItemDecoration(itemDecoration);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        refreshData();
+    }
+
+    public void createTable(){
         list = new ArrayList<>();
-
-        mDatabase = FirebaseDatabase.getInstance().getReference("Users");
-
         mAdapter = new LeaderboardAdapter(getContext(), list, exercise);
         mRecyclerView.setAdapter(mAdapter);
 
+        mDatabase = FirebaseDatabase.getInstance().getReference("Users");
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                     User user = dataSnapshot.getValue(User.class);
                     list.add(user);
+
                 }
+                list.sort(new Comparator<User>() {
+                    @Override
+                    public int compare(User user, User t1) {
+                        if (exercise.equals("Push-up")){
+                            return Integer.compare(t1.getPushUpTotalCount(), user.getPushUpTotalCount());
+                        }
+                        else{
+                            return Integer.compare(t1.getSitUpTotalCount(), user.getSitUpTotalCount());
+                        }
+                    }
+                });
                 mAdapter.notifyDataSetChanged();
             }
 
@@ -121,26 +138,25 @@ public class LeaderboardFragment extends ConnectedPeripheralFragment{
             }
         });
 
+
+
+
     }
 
     @Override
-    public void onResume() {
-        Log.d(TAG, "OnResume");
+    public void onStart() {
+        super.onStart();
 
-        super.onResume();
+        refreshData();
     }
 
-    @Override
-    public void onPause() {
-        Log.d(TAG, "OnPause");
-
-        super.onPause();
+    private void refreshData() {
+        if (mFragmentView != null){
+            createTable();
+        }else{
+            list.clear();
+        }
     }
 
-    @Override
-    public void onDestroy() {
-        Log.d(TAG, "OnDestroy");
 
-        super.onDestroy();
-    }
 }

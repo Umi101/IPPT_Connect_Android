@@ -187,6 +187,7 @@ public class ExerciseFragment extends ConnectedPeripheralFragment implements Uar
             }
         });
 
+        final String[] text = new String[1];
         mStopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -203,8 +204,14 @@ public class ExerciseFragment extends ConnectedPeripheralFragment implements Uar
                 Log.d(TAG, "Total Count: " + countTotal);
                 Log.d(TAG, "Accurate Count: " + countAccurate);
                 saveData();
-                String text = String.format(Locale.getDefault(), "You have %d out of %d push-ups fulfill the standards!", countAccurate, countTotal);
-                mResultTextView.setText(text);
+                if (exercise.equals(R.string.pushUp)){
+                    text[0] = String.format(Locale.getDefault(), "You have %d out of %d push-ups fulfill the standards!", countAccurate, countTotal);
+                }
+                else{
+                    text[0] = String.format(Locale.getDefault(), "You have %d out of %d sit-ups fulfill the standards!", countAccurate, countTotal);
+                }
+
+                mResultTextView.setText(text[0]);
                 altitudeList.clear();
             }
         });
@@ -402,7 +409,7 @@ public class ExerciseFragment extends ConnectedPeripheralFragment implements Uar
                 if ((altitudeList.get(i) < altitudeList.get(i - 1)) && (altitudeList.get(i) < altitudeList.get(i + 1))) {
                     Double troughTemp = altitudeList.get(i);
                     if (exercise.equals(getString(R.string.pushUp))){
-                        if (peak - troughTemp > 0.2) {
+                        if (peak - troughTemp > 0.3) {
                             trough = troughTemp;
                             if (peak - trough > pushUpBenchmark) {
                                 countAccurate++;
@@ -411,7 +418,7 @@ public class ExerciseFragment extends ConnectedPeripheralFragment implements Uar
                         }
                     }
                     else if(exercise.equals(getString(R.string.sitUp))){
-                        if (peak - troughTemp > 0.2) {
+                        if (peak - troughTemp > 0.35) {
                             trough = troughTemp;
                             if (peak - trough > pullUpBenchmark) {
                                 countAccurate++;
